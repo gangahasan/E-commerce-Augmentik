@@ -1,8 +1,18 @@
 import React from 'react'
 import "../styles/nav.css"
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../redux/actions/authactions'
 
 const Navbar = () => {
+    const user = useSelector((state)=>state.auth.user);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleLogout=()=>{
+        dispatch(logout());
+        navigate("/")
+    }
   return (
     <div className="navbar">
       <div className="nav-left">
@@ -18,9 +28,12 @@ const Navbar = () => {
         <NavLink to="/cart" className="navlinks">
           Cart
         </NavLink>
-        <NavLink to="/" className="navlinks">
+        {!user?(<NavLink to="/" className="navlinks">
           Login
-        </NavLink>
+        </NavLink>):(
+            <button onClick={handleLogout}>Logout</button>
+        )}
+        
       </div>
     </div>
   );

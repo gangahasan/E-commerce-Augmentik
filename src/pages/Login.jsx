@@ -5,8 +5,7 @@ import { login } from "../redux/actions/authactions";
 import "../styles/login.css"
 
 const Login = () => {
-const user = useSelector((state)=> state.auth.user);
-console.log(user,"user from loginpage")
+const user = useSelector((state)=> state.auth.user)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch("");

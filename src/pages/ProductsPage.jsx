@@ -20,7 +20,6 @@ const ProductsPage = () => {
     }
   return (
     <div>
-        <button style={{float:"right"}} onClick={handleLogout}>logout</button>
       <div className="productCont">
         {products.length > 0 &&
           products.map((product, index) => {

@@ -3,7 +3,12 @@
     align-items: center;
     justify-content: space-between;
     background-color: antiquewhite;
+    border: 2px solid rgb(220, 189, 250);
+    border-radius: 5px;
     padding: 10px 20px;
+    top: 0;
+    position: sticky;
+    z-index: 1000;
 }
 .nav-right{
     display: flex;
