@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchProducts } from '../redux/actions/productactions';
+import { addtoWishlist, fetchProducts } from '../redux/actions/productactions';
 import "../styles/products.css"
-import { logout } from '../redux/actions/authactions';
 import { useNavigate } from 'react-router-dom';
 
 const ProductsPage = () => {
@@ -14,10 +13,11 @@ const ProductsPage = () => {
         dispatch(fetchProducts());
     },[dispatch])
 
-    const handleLogout=()=>{
-        dispatch(logout());
-        navigate("/");
+    const handleAddtoWishlist=(product)=>{
+        dispatch(addtoWishlist(product));
+
     }
+    
   return (
     <div>
       <div className="productCont">
@@ -30,7 +30,7 @@ const ProductsPage = () => {
                 <p>Price:{product.price}</p>
                 <p>Rating:{product.rating}</p>
                 <div className="buttons">
-                  <button>Add to WishList</button>
+                  <button onClick={()=>handleAddtoWishlist(product)}>Add to WishList</button>
                   <button>Add To Cart</button>
                 </div>
               </div>
