@@ -1,0 +1,38 @@
+form{
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    gap: 10px;
+    width: 300px;
+    height: auto;
+}
+form h1{
+    color:blueviolet
+}
+form input{
+    padding: 10px;
+    width: 80%;
+    border: none;
+}
+form input[type="submit"] {
+    background-color: blueviolet;
+    width: 30%;
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Add hover effect */
+form input[type="submit"]:hover {
+    background-color: rebeccapurple;
+}
+h3{
+    text-align: center;
+}

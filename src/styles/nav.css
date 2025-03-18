@@ -1,0 +1,25 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    padding: 10px 20px;
+}
+.nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap:30px;
+    
+}
+.logo{
+    font-size: 30px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.navlinks{
+    color: blueviolet;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bold;
+}
