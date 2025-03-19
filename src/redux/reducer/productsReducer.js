@@ -1,10 +1,12 @@
 import { ADDTO_WISHLIST,ADD_TO_CART,REMOVE_FROM_CART, FETCH_PRODUCTS_FAILURE, FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS } from "../actions/productactions";
 const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+const storedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
 const initState = {
   products: [],
   loading: false,
   error: null,
-  wishlist:[],
+  wishlist:storedWishlist,
   cart:storedCart,
 };
 export const productsReducer=(state=initState,action)=>{

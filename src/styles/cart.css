@@ -1,21 +1,27 @@
 .cart-container{
     margin: 3rem auto;
     width: 80%;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    display: flex;
+    flex-direction: column;
+
+    /* grid-template-columns: repeat(2,1fr); */
     gap: 20px;
 }
 .cart-item{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 20px;
+    width: 50%;
+    justify-content: space-around;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 16px;
     background-color:antiquewhite;
-    padding: 20px 0px;
+    padding: 10px 0px;
 }
 h1{
     text-align: center;
     color: blueviolet;
+}
+#cart-count{
+    color: rgb(245, 95, 95);
 }
