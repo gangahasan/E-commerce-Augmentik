@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addtoWishlist, fetchProducts } from '../redux/actions/productactions';
+import { addToCart, addtoWishlist, fetchProducts } from '../redux/actions/productactions';
 import "../styles/products.css"
 import { useNavigate } from 'react-router-dom';
 
@@ -17,6 +17,13 @@ const ProductsPage = () => {
         dispatch(addtoWishlist(product));
 
     }
+    const handleAddToCart = (product) => {
+      console.log("Add to Cart clicked", product);
+      dispatch(addToCart(product));
+      alert("item added to cart")
+    };
+
+
     
   return (
     <div>
@@ -30,8 +37,12 @@ const ProductsPage = () => {
                 <p>Price:{product.price}</p>
                 <p>Rating:{product.rating}</p>
                 <div className="buttons">
-                  <button onClick={()=>handleAddtoWishlist(product)}>Add to WishList</button>
-                  <button>Add To Cart</button>
+                  <button onClick={() => handleAddtoWishlist(product)}>
+                    Add to WishList
+                  </button>
+                  <button onClick={() => handleAddToCart(product)}>
+                    Add To Cart
+                  </button>
                 </div>
               </div>
             );
