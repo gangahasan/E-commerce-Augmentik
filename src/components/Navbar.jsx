@@ -49,7 +49,11 @@ const Navbar = () => {
           <span id="cart-count">{cart.length}</span>
         </NavLink>
         {!user ? (
-          <NavLink to="/" className="navlinks">
+          <NavLink
+            to="/"
+            className="navlinks"
+            style={{ color: "rgb(245, 95, 95)" }}
+          >
             Login
           </NavLink>
         ) : (
