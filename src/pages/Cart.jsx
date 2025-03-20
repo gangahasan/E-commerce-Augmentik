@@ -64,7 +64,7 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <p>Your cart is empty.</p>
+        <h3 style={{textAlign:"center"}}>Your cart is empty.</h3>
       )}
     </div>
   );

@@ -30,7 +30,7 @@ const Wishlist = () => {
           ))}
         </div>
       ) : (
-        <p>Your wishlist is empty.</p>
+        <h3 style={{textAlign:"center"}}>Your wishlist is empty.</h3>
       )}
     </div>
   );
