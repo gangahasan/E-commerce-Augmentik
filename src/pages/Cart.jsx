@@ -2,9 +2,12 @@ import React from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { removeFromCart } from "../redux/actions/productactions";
 import "../styles/cart.css"
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const cart = useSelector((state) => state.products.cart) || [];
+
+  const navigate = useNavigate();
 
   let cartprice = cart.reduce((sum, item) => {
     // Convert price to string then remove any non-digit/non-decimal characters
@@ -24,7 +27,9 @@ const Cart = () => {
    const handleRemove = (product) => {
      dispatch(removeFromCart(product));
    };
-
+   const handleCheckout=()=>{
+    navigate("/checkout");
+   }
   return (
     <div>
       <h1>Shopping Cart</h1>
@@ -60,7 +65,7 @@ const Cart = () => {
                 Total Price:<span style={{ color: "red" }}>${total}</span>
               </p>
             </div>
-            <button>Proceed To Checkout</button>
+            <button onClick={handleCheckout}>Proceed To Checkout</button>
           </div>
         </div>
       ) : (
